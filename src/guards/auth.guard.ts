@@ -11,8 +11,7 @@ export class authGuard implements CanActivate {
   async canActivate(context: ExecutionContext) {
     const request = context.switchToHttp().getRequest<Request>();
     const authHeader = request.headers;
-
-    if (!authHeader) {
+    if (!authHeader['authorization']) {
       throw new UnauthorizedException('Token JWT not found');
     }
     const token = authHeader['authorization'].split(' ')[1];

@@ -16,6 +16,9 @@ import { UsersModule } from './users/users.module';
     }),
     MongooseModule.forRoot(
       'mongodb+srv://admin:admin@crud-person.rm6bg.mongodb.net/?retryWrites=true&w=majority&appName=crud-person',
+      {
+        dbName: 'crud_pets',
+      },
     ),
 
     PetsModule,

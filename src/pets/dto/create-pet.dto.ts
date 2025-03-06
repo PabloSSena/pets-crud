@@ -1,6 +1,5 @@
 export class CreatePetDto {
   name: string;
-  age: string;
+  age: number;
   typeOfAnimal: string;
-  ownerId: number;
 }
