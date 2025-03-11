@@ -4,8 +4,9 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import keycloakConfiguration from './keycloakConfig/keycloak-configuration';
-import { AuthenticationMiddleware } from './middlewares/authentication.middleware';
+import { RequestMiddleware } from './middlewares/request.middleware';
 import { PetsModule } from './pets/pets.module';
+import { ProducerModule } from './rabbitmq/rabbitmq.module';
 import { UsersModule } from './users/users.module';
 @Module({
   imports: [
@@ -24,10 +25,11 @@ import { UsersModule } from './users/users.module';
     PetsModule,
     UsersModule,
     AuthModule,
+    ProducerModule,
   ],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(AuthenticationMiddleware).forRoutes('*');
+    consumer.apply(RequestMiddleware).forRoutes('*');
   }
 }

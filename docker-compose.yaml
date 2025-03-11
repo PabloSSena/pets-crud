@@ -7,3 +7,10 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
     command: ['start-dev']
+
+  rabbitmq:
+    image: rabbitmq:4.1.0-beta.3-management
+    container_name: 'pets-crud-rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672

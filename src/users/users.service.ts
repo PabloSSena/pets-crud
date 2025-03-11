@@ -14,7 +14,6 @@ export class UsersService {
   async create(createUserDto: CreateUserDto) {
     try {
       const acces_token = await this.getAdminToken();
-      console.log('access', acces_token);
       let user: UserKeycloakDTO = new UserKeycloakDTO();
       user.username = createUserDto.username;
       user.email = createUserDto.email;
@@ -24,7 +23,6 @@ export class UsersService {
       credential.type = 'password';
       credential.temporary = false;
       user.credentials = [credential];
-      console.log('user', user);
       await firstValueFrom(
         this.httpService.post(
           `${process.env.KEYCLOAK_ADMIN_BASE_URL}/users`,
