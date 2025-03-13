@@ -1,5 +1,9 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { firstValueFrom } from 'rxjs';
 import { LoginDto } from './dto/login-dto';
 
@@ -31,13 +35,18 @@ export class AuthService {
           },
         ),
       );
-      console.log('response', response.status);
+      return response.data;
     } catch (error) {
+      console.log('oi eu caio aq');
       if (error.status === 401) {
         throw new UnauthorizedException({
           message: 'User not found',
         });
       }
+      throw new BadRequestException({
+        status: error.status,
+        message: error.response.data.error_description ?? 'Error',
+      });
     }
   }
 }

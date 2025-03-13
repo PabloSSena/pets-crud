@@ -14,7 +14,6 @@ export class RequestMiddleware implements NestMiddleware {
 
     res.on('finish', () => {
       const duration = Date.now() - start;
-
       const requestData: Log = {
         method: req.method,
         url: req.url,
@@ -22,7 +21,7 @@ export class RequestMiddleware implements NestMiddleware {
         query: req.query,
         body: req.body,
         headers: req.headers,
-        statusCode: req.statusCode,
+        statusCode: req.res?.statusCode,
         responseTime: `${duration}ms`,
         timeStamp: new Date().toISOString(),
       };
