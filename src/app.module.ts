@@ -8,8 +8,10 @@ import { RequestMiddleware } from './middlewares/request.middleware';
 import { PetsModule } from './pets/pets.module';
 import { ProducerModule } from './rabbitmq/rabbitmq.module';
 import { UsersModule } from './users/users.module';
+import { PrometheusModule } from '@willsoto/nestjs-prometheus';
 @Module({
   imports: [
+    PrometheusModule.register(),
     HttpModule,
     ConfigModule.forRoot({
       isGlobal: true,
