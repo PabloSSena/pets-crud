@@ -1,0 +1,17 @@
+{
+	"ulid": "01JPSCG723THK7PBT54WGB3YVG",
+	"minTime": 1742450413662,
+	"maxTime": 1742457600000,
+	"stats": {
+		"numSamples": 494400,
+		"numSeries": 1030,
+		"numChunks": 4170
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01JPSCG723THK7PBT54WGB3YVG"
+		]
+	},
+	"version": 1
+}
