@@ -11,3 +11,9 @@ Modelo para exemplo do funcionamento.
 ## LOGS DE REQUISIÇÃO
 
 A api implementa um mecanismo de logging assíncrono para todas as requisições. Um middleware intercepta cada requisição, coletando informações relevantes como método HTTP, endpoint, parâmetros, tempo de resposta e código de status. Estes dados são enviados para uma fila no RabbitMQ, permitindo que a API continue atendendo às solicitações sem bloqueio.
+Modelo para exemplo de funcionamento.
+
+![Minha Imagem](assets/DiagramaRabbitMqLogging.drawio.png)
+
+
+
