@@ -5,7 +5,7 @@
 A api usa o KeyCloak para fazer o cadastro de usuários e login dos mesmos.
 Modelo para exemplo do funcionamento.
 
-![Minha Imagem](assets/IAM.png)
+![C4Model keycloak](assets/IAM.png)
 
 
 ## LOGS DE REQUISIÇÃO
@@ -13,7 +13,13 @@ Modelo para exemplo do funcionamento.
 A api implementa um mecanismo de logging assíncrono para todas as requisições. Um middleware intercepta cada requisição, coletando informações relevantes como método HTTP, endpoint, parâmetros, tempo de resposta e código de status. Estes dados são enviados para uma fila no RabbitMQ, permitindo que a API continue atendendo às solicitações sem bloqueio.
 Modelo para exemplo de funcionamento.
 
-![Minha Imagem](assets/DiagramaRabbitMqLogging.drawio.png)
+![C4Model RabbitMQ](assets/DiagramaRabbitMqLogging.drawio.png)
+
+
+Segue um exemplo de Log armazenado no banco de dados. Nele, podemos visualizar informações como o tipo de requisição, a data e hora em que ocorreu, o tempo de processamento, entre outros detalhes relevantes.
+
+![Exemplo Log](assets/exemploLog.png)
+
 
 
 
