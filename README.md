@@ -20,4 +20,4 @@ Segue um exemplo de Log armazenado no banco de dados. Nele, podemos visualizar i
 
 Além desses logs armazenados no banco a api também conta com logs no terminal para sinalizar ação de usuários. Segue exemplo:
 
-![Exemplo Log no terminak](assets/logExample.png)
+![Exemplo Log no terminal](assets/logExample.png)
