@@ -1,5 +1,5 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { firstValueFrom } from 'rxjs';
 import { CreateUserDto } from './dto/create-user.dto';
 import { Credentials, UserKeycloakDTO } from './dto/user-to-keycloak';
@@ -34,12 +34,12 @@ export class UsersService {
           },
         ),
       );
+      Logger.log(`USER ${createUserDto.username} CREATED SUCCESSFULLY`)
       return {
         username: createUserDto.username,
         password: createUserDto.password,
       };
     } catch (error) {
-      console.log(error);
       throw new Error('Failed to create a user');
     }
   }
