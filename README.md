@@ -1,4 +1,4 @@
-# CRUD-PETS
+# PETS-CRUD
 
 ![Exemplo Log](assets/banner.png)
 
