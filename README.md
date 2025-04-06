@@ -1,5 +1,7 @@
 # CRUD-PETS
 
+![Exemplo Log](assets/banner.png)
+
 ## AUTENTICAÇÃO
 
 A api usa o KeyCloak para fazer o cadastro de usuários e login dos mesmos.
