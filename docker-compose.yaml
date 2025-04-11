@@ -16,16 +16,16 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
-  
+
   node_exporter:
     container_name: node_exporter
     image: prom/node-exporter:latest
     command:
       - '--path.rootfs=/host'
     pid: host
-    volumes: 
+    volumes:
       - '/:/host:ro'
-  
+
   prometheus:
     container_name: prometheus
     image: prom/prometheus:latest
@@ -41,10 +41,8 @@ services:
   grafana:
     container_name: grafana
     user: root
-    image: grafana/grafana-oss:latest
+    image: grafana/grafana-enterprise
     ports:
       - '5000:3000'
-    environment:
-      - GF_INSTALL_PLUGINS=marcusolsson-mongodb-datasource
     volumes:
       - ./grafana-data:/var/lib/grafana
